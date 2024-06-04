@@ -67,6 +67,8 @@ Route::get('/main', [MainPageController::class, 'mainView'])->name('main');
 
 Route::get('/lapangan/{id}', [MainPageController::class, 'detail'])->name('lapangan.detail');
 
+Route::get('/admin/dashboard/{id}', [AdminController::class, 'detail'])->name('lapangan.detailAdmin');
+
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::post('/admin/dashboard/approve/{id}', [AdminController::class, 'approve'])->name('admin.dashboard.approve');
 Route::post('/admin/dashboard/reject/{id}', [AdminController::class, 'reject'])->name('admin.dashboard.reject');
