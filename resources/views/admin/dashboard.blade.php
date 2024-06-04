@@ -12,23 +12,20 @@
         <button type="submit">Logout</button>
     </form>
 
-    @foreach($lapangans as $lapangan)
-    <div>
-        <!-- Display field photo -->
-        <img src="{{ asset('storage/field_photos/' . $lapangan->field_photo) }}" alt="Field Photo" style="max-width: 200px">
-        <p>Nama Lapangan: {{ $lapangan->field_name }}</p>
-        <p>Lokasi: {{ $lapangan->location }}</p>
-        <p>Status: {{ $lapangan->approved ? 'Approved' : 'Pending' }}</p>
-        <!-- Tampilkan informasi lainnya sesuai kebutuhan -->
-        <form action="{{ route('admin.dashboard.approve', $lapangan->id) }}" method="post">
-            @csrf
-            <button type="submit">Approve</button>
-        </form>
-        <form action="{{ route('admin.dashboard.reject', $lapangan->id) }}" method="post">
-            @csrf
-            <button type="submit">Reject</button>
-        </form>
-    </div>
-    @endforeach
+    @if ($lapangans->isEmpty())
+        <p>Tidak ada lapangan yang tersedia saat ini.</p>
+    @else
+        @foreach($lapangans as $lapangan)
+            <div>
+            <a href="{{ route('lapangan.detailAdmin', $lapangan->id) }}">
+                <img src="{{ asset('storage/field_photos/' . $lapangan->field_photo) }}" alt="Field Photo" style="max-width: 200px">
+                <p>Nama Lapangan: {{ $lapangan->field_name }}</p>
+                <p>Lokasi: {{ $lapangan->location }}</p>
+                <p>Status: {{ $lapangan->approved ? 'Approved' : 'Pending' }}</p>
+            </div>
+            <hr>
+        @endforeach
+    @endif
+
 </body>
 </html>

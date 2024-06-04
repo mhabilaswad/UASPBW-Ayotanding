@@ -56,8 +56,8 @@ class LapanganController extends Controller
         $lapangan->full_name = $request->full_name;
         $lapangan->phone_number = $request->phone_number;
         $lapangan->email = $request->email;
-        $lapangan->identity_photo = $identityPhotoPath ?? null;
-        $lapangan->ownership_proof = $ownershipProofPath ?? null;
+        $lapangan->identity_photo = basename($identityPhotoPath) ?? null;
+        $lapangan->ownership_proof = basename($ownershipProofPath) ?? null;
         $lapangan->payment_option = $request->payment_option;
         $lapangan->field_name = $request->field_name;
         $lapangan->location = $request->location;
