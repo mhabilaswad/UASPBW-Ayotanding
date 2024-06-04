@@ -8,7 +8,6 @@ use App\Http\Controllers\LapanganController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\BookingController;
-use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\TiketController;
 
 Route::get('/keranjang', [BookingController::class, 'showCart'])->name('keranjang');
