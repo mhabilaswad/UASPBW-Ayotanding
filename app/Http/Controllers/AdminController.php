@@ -34,5 +34,3 @@ class AdminController extends Controller
         return redirect()->route('admin.dashboard')->with('success', 'Lapangan berhasil ditolak.');
     }
 }
-
-

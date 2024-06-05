@@ -87,5 +87,3 @@ class LapanganController extends Controller
         return redirect()->route('profile')->with('success', 'Lapangan berhasil didaftarkan.');
     }
 }
-
-
