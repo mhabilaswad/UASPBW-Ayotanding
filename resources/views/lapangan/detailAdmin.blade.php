@@ -8,14 +8,14 @@
 </head>
 <body class="bg-gray-200">
 
-      <div class="bg-blue-600 text-white p-4 flex justify-between">
+    <div class="text-white py-2 flex justify-between" style="background-color: #19A7CE;">
   <div>
-    <h1 class="text-xl font-bold">ADMIN</h1>
+    <img src="{{  asset('storage/landing_photos/logo_tanding.png') }}" alt="My Logo" class="h-8 w-auto mr-2 ml-4">
   </div>
   <form method="POST" action="{{ route('logout') }}">
         @csrf
-        <div>
-            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Logout</button>
+        <div class="mr-4">
+            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold px-3 py-1/3 rounded">Logout</button>
         </div>
     </form>
 </div>

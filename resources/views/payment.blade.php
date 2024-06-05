@@ -15,7 +15,8 @@
     <p class="text-gray-700 font-bold">Total Pembayaran: Rp {{ number_format($totalAmount, 2) }}</p>
   </div>
   <div class="mb-4">
-      <p class="text-gray-700">Lakukan pembayaran ke No. Rekening / HP: {{ $paymentOption }}</p>
+
+      <p class="text-gray-700">Lakukan pembayaran ke No. Rekening / No. Ponsel: {{ $paymentOption }}</p>
   </div>
   <div class="mb-6">
       <p class="text-gray-700">Anda memiliki waktu 10 menit untuk melakukan pembayaran.</p>
