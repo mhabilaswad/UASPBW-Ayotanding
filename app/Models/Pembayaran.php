@@ -33,7 +33,7 @@ class Pembayaran extends Model
     // Relasi dengan tabel lapangan
     public function lapangan()
     {
-        return $this->belongsTo(Lapangan::class);
+        return $this->belongsTo(Lapangan::class, 'lapangan_id');
     }
 
     // Relasi dengan tabel fase

@@ -1,5 +1,6 @@
 <?php
 
+// TiketController.php
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -10,10 +11,10 @@ class TiketController extends Controller
 {
     public function index()
     {
-        // Ambil data pembayaran milik pengguna yang sedang login
-        $pembayarans = Pembayaran::where('user_id', Auth::id())->get();
+        $user = Auth::user();
+        $pembayarans = Pembayaran::where('user_id', $user->id)->with(['lapangan', 'fase'])->get();
 
-        // Kirim data pembayaran ke halaman tiket.blade.php
         return view('tiket', compact('pembayarans'));
     }
 }
+
