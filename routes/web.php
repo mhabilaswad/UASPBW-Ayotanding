@@ -8,7 +8,6 @@ use App\Http\Controllers\LapanganController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\BookingController;
-use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\TiketController;
 
 Route::get('/keranjang', [BookingController::class, 'showCart'])->name('keranjang');
@@ -67,6 +66,8 @@ Route::get('/', function () {
 Route::get('/main', [MainPageController::class, 'mainView'])->name('main');
 
 Route::get('/lapangan/{id}', [MainPageController::class, 'detail'])->name('lapangan.detail');
+
+Route::get('/admin/dashboard/{id}', [AdminController::class, 'detail'])->name('lapangan.detailAdmin');
 
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::post('/admin/dashboard/approve/{id}', [AdminController::class, 'approve'])->name('admin.dashboard.approve');

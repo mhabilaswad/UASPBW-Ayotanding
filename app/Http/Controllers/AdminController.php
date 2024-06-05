@@ -13,6 +13,12 @@ class AdminController extends Controller
         return view('admin.dashboard', compact('lapangans')); // Mengirimkan data lapangan ke view
     }
 
+    public function detail($id)
+    {
+        $lapangans = Lapangan::with('fases', 'jenisLapangan', 'layananPembayaran')->findOrFail($id); // Mengambil semua data lapangan dari database
+        return view('lapangan.detailAdmin', compact('lapangans')); // Mengirimkan data lapangan ke view
+    }
+
     public function approve(Request $request, $id)
     {
         $lapangan = Lapangan::findOrFail($id);
@@ -28,5 +34,3 @@ class AdminController extends Controller
         return redirect()->route('admin.dashboard')->with('success', 'Lapangan berhasil ditolak.');
     }
 }
-
-
