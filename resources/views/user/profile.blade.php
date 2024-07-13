@@ -56,7 +56,7 @@
                     <tr>
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $pembayaran->user->name }}</td>
-                        <td>{{ $pembayaran->user->phone_number }}</td>
+                        <td>{{ $pembayaran->phone_number }}</td>
                         <td>{{ $pembayaran->user->email }}</td>
                         <td>{{ $pembayaran->booking_date }}</td>
                         <td>{{ $pembayaran->fase->jam_mulai }} - {{ $pembayaran->fase->jam_berakhir }}</td>
