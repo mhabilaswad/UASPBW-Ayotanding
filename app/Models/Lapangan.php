@@ -49,4 +49,12 @@ class Lapangan extends Model
     {
         return $this->hasMany(Pembayaran::class);
     }
+
+    public function index()
+    {
+        // Ambil semua lapangan beserta fase
+        $lapangans = Lapangan::with('fase')->get();
+        return view('home', compact('lapangans'));
+    }
+
 }

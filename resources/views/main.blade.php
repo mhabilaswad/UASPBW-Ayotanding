@@ -37,12 +37,24 @@
         <h3 class="text-lg font-bold mb-1">{{ $lapangan->field_name }}</h3>
         <p class="text-gray-600 mb-2">{{ $lapangan->jenisLapangan->nama }}</p>
         <p class="text-gray-600 mb-2">{{ $lapangan->location }}</p>
+
         <div class="flex justify-between items-center">
+          <!-- Tampilkan salah satu harga dari fase -->
+          @if ($lapangan->fases->isNotEmpty())
+            <p class="text-lg font-bold text-gray-800">
+              Rp{{ number_format($lapangan->fases->first()->harga, 0, ',', '.') }}
+            </p>
+          @else
+            <p class="text-lg font-bold text-gray-800">
+              Harga tidak tersedia
+            </p>
+          @endif
           <a href="{{ route('lapangan.detail', $lapangan->id) }}" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Lihat Detail</a>
         </div>
       </div>
     @endforeach
-  </div>
+</div>
+
 
 </body>
 </html>
