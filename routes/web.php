@@ -74,3 +74,7 @@ Route::post('/admin/dashboard/approve/{id}', [AdminController::class, 'approve']
 Route::post('/admin/dashboard/reject/{id}', [AdminController::class, 'reject'])->name('admin.dashboard.reject');
 
 Route::get('/tiket', [TiketController::class, 'index'])->name('tiket');
+
+Route::get('/aboutus', function () {
+    return view('aboutus');
+})->name('aboutus');

@@ -19,6 +19,7 @@
           <a href="{{ route('daftarkan-lapangan') }}" class="hover:text-opacity-75">Daftarkan Lapangan</a>
           <a href="{{ route('profile') }}" class="hover:text-opacity-75">Profile</a>
           <a href="{{ route('tiket') }}" class="hover:text-opacity-75">Tiket</a>
+          <a href="{{ route('aboutus') }}" class="hover:text-opacity-75">About Us</a>
           <form method="POST" action="{{ route('logout') }}" class="inline">
             @csrf
             <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold px-3 py-1/3 rounded">Logout</button>
