@@ -1,5 +1,5 @@
 # 1. Gunakan image PHP dengan versi yang tepat
-FROM php:8.1-fpm
+FROM php:8.2-fpm
 
 # 2. Install dependencies yang diperlukan untuk Laravel
 RUN apt-get update && apt-get install -y \
