@@ -7,10 +7,21 @@ services:
       dockerfile: Dockerfile
     image: laravel-app
     container_name: laravel-app
-    ports:
-      - "8000:9000"  # Map port 8000 di host ke port 9000 di container
     volumes:
       - .:/var/www/html
+    networks:
+      - laravel-network
+
+  webserver:
+    image: nginx:latest
+    container_name: nginx-laravel
+    ports:
+      - "8000:80"  # Map port 8000 di host ke port 80 di container Nginx
+    volumes:
+      - .:/var/www/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
     networks:
       - laravel-network
 
