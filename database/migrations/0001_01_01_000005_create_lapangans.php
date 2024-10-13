@@ -28,8 +28,10 @@ return new class extends Migration
             $table->string('field_photo'); // Path atau URL foto lapangan
             $table->boolean('approved')->default(false);
             $table->timestamps(); // Waktu pembuatan dan pembaruan
+            $table->unsignedBigInteger('layanan_pembayaran_id');
             
             $table->foreign('jenis_lapangan_id')->references('id')->on('jenis_lapangan')->onDelete('cascade');
+            $table->foreign('layanan_pembayaran_id')->references('id')->on('layanan_pembayaran')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // Add foreign key constraint
         });
     }
