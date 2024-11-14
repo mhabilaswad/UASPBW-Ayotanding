@@ -40,3 +40,5 @@ EXPOSE 9000
 
 # Jalankan PHP-FPM saat container dijalankan
 CMD ["php-fpm"]
+
+ENV PORT 8080
