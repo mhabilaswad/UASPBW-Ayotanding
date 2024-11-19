@@ -35,6 +35,11 @@ services:
       SERVICE_NAME: mysql
     networks:
       - laravel
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
 
   php:
     depends_on:

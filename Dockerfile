@@ -40,3 +40,7 @@ EXPOSE 9000
 
 # Jalankan PHP-FPM saat container dijalankan
 CMD ["php-fpm"]
+
+COPY startup.sh /usr/local/bin/startup.sh
+RUN chmod +x /usr/local/bin/startup.sh
+CMD ["startup.sh"]
