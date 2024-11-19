@@ -35,8 +35,8 @@ RUN composer install --no-dev --no-scripts --no-interaction
 # Set permission agar Laravel bisa menulis di folder storage dan cache
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Expose port 9000 untuk mengakses PHP-FPM
-EXPOSE 9000
+# Expose port 8080 untuk mengakses PHP-FPM
+EXPOSE 8080
 
 # Jalankan PHP-FPM saat container dijalankan
 CMD ["php-fpm"]
