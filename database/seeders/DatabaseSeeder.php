@@ -1,10 +1,11 @@
 <?php
 
+namespace Database\Seeders;  // Menambahkan namespace yang benar
+
 use Illuminate\Database\Seeder;
 use Database\Seeders\JenisLapanganSeeder;
 use Database\Seeders\LayananPembayaranSeeder;
 use Database\Seeders\UserSeeder;
-
 
 class DatabaseSeeder extends Seeder
 {

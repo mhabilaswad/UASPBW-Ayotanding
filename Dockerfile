@@ -32,15 +32,15 @@ COPY . .
 # Install semua dependensi Laravel
 RUN composer install --no-dev --no-scripts --no-interaction
 
+# Menjalankan migrasi dan seeding secara otomatis
+RUN php artisan migrate --force
+RUN php artisan db:seed --force
+
 # Set permission agar Laravel bisa menulis di folder storage dan cache
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Expose port 9000 untuk mengakses PHP-FPM
 EXPOSE 9000
 
-# Jalankan PHP-FPM saat container dijalankan
+# # Jalankan PHP-FPM saat container dijalankan
 CMD ["php-fpm"]
-
-COPY startup.sh /usr/local/bin/startup.sh
-RUN chmod +x /usr/local/bin/startup.sh
-CMD ["startup.sh"]
