@@ -32,6 +32,9 @@ COPY . .
 # Install semua dependensi Laravel
 RUN composer install --no-dev --no-scripts --no-interaction
 
+# Jalankan migrasi dan seeding secara otomatis saat container mulai
+RUN php artisan migrate --force && php artisan db:seed --force
+
 # Set permission agar Laravel bisa menulis di folder storage dan cache
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
