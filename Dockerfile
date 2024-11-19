@@ -39,4 +39,5 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 EXPOSE 8080
 
 # Jalankan PHP-FPM saat container dijalankan
-CMD ["php-fpm"]
+# CMD ["php-fpm"]
+CMD ["php", "-S", "0.0.0.0:8080", "-t", "public"]
